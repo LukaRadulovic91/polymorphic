@@ -7,3 +7,4 @@
 7.fetchovanje promena sa postojece grane -> git fetch origin ime_grane
 8.fetchovanje svih promena -> git fetch --all
 9.redirekcija na odredjeni commit -> git cherry-pick ime_hasha
+10.prebacivanje na postojecu granu -> git checkout ime_grane
