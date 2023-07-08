@@ -1,0 +1,11 @@
+1. izvlacimo granu iz master-a
+2. dajemo joj ime po konvenciji: aleksa-product, aleksa-comment...
+3. nakon kreirane mini celine vrsimo commitovanje promena
+4. nakon zavrsenog zadatka vrsimo pushovanje SAMO na tu granu:
+"git push origin ime_grane"
+
+-----------------------------------------------
+pokretanje projekta:
+1. otvaranje IDE-a
+2. pokretanje XAMPP-a
+3. u bash shellu: php artisan serve

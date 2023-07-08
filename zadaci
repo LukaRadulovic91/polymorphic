@@ -1,0 +1,24 @@
+1.Kreirati formu za unos korisnika
+a.kreirati stranu gde se izlistavaju svi uneti korisnici (html=blade file)
+b.kreirati opciju editovanja korisnika(na posebnoj strani)
+c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
+d.kreirati stranu za prikaz jednog korisnika
+
+
+2.kreirati formu za unos proizvoda
+a.kreirati stranu gde se izlistavaju svi uneti korisnici
+b.kreirati opciju editovanja korisnika(na posebnoj strani)
+c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
+d.kreirati stranu za prikaz jednog korisnika
+e.povezati entitet product sa entitetom komentar
+
+3.kreirati formu za unos komentara
+a.kreirati stranu gde se izlistavaju svi uneti korisnici
+b.kreirati opciju editovanja korisnika(na posebnoj strani)
+c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
+d.kreirati stranu za prikaz jednog korisnika
+e.povezati entitet komentar sa entitetom product
+
+4.napraviti model(entitet)cart i tabelu carts
+napravi relaciju izmedju korpe i proizvoda
+napraviti relaciju izmedju korpe i korisnika
