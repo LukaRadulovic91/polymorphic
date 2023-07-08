@@ -1,22 +1,47 @@
 1.Kreirati formu za unos korisnika
-a.kreirati stranu gde se izlistavaju svi uneti korisnici (html=blade file)
+a.kreirati stranu gde se izlistavaju svi uneti korisnici (html=blade file):
+  -resources/views/user -> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> users
 b.kreirati opciju editovanja korisnika(na posebnoj strani)
+  -resources/views/user -> pozicija fajla -> imefajla=edit.blade.php
+  -url adresa -> users/{user}/edit
 c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
 d.kreirati stranu za prikaz jednog korisnika
+  -resources/views/user -> pozicija fajla -> imefajla=show.blade.php
+  -url adresa -> users/{user}
 
 
 2.kreirati formu za unos proizvoda
-a.kreirati stranu gde se izlistavaju svi uneti korisnici
-b.kreirati opciju editovanja korisnika(na posebnoj strani)
-c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
-d.kreirati stranu za prikaz jednog korisnika
+a.kreirati stranu gde se izlistavaju svi uneti proizvodi
+  -resources/views/products-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> products
+b.kreirati opciju editovanja proizvoda(na posebnoj strani)
+  -resources/views/products-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> products/{product}/edit
+c.kreirati opciju za brisanje proizvoda(mora na istoj-index strani)
+
+d.kreirati stranu za prikaz jednog proizvoda
+  -resources/views/products-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> products/{product}
 e.povezati entitet product sa entitetom komentar
+f.Kreirati migraciju za unos kolona proizvoda:
+  -id, title, price, timestamps
+g.Kreirati model product
+h.Kreirati controller productsController
+i.Kreirati request klasu createProductRequest
+j.Kreirati request klasu updateProductRequest
 
 3.kreirati formu za unos komentara
-a.kreirati stranu gde se izlistavaju svi uneti korisnici
-b.kreirati opciju editovanja korisnika(na posebnoj strani)
-c.kreirati opciju za brisanje korisnika(mora na istoj-index strani)
-d.kreirati stranu za prikaz jednog korisnika
+a.kreirati stranu gde se izlistavaju svi uneti komentari
+  -resources/views/comments-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> comments
+b.kreirati opciju editovanja komentara(na posebnoj strani)
+  -resources/views/comments-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> comments/{comment}/edit
+c.kreirati opciju za brisanje komentara(mora na istoj-index strani)
+d.kreirati stranu za prikaz jednog komentara
+  -resources/views/comments-> pozicija fajla -> imefajla=index.blade.php
+  -url adresa -> comments/{comment}
 e.povezati entitet komentar sa entitetom product
 
 4.napraviti model(entitet)cart i tabelu carts
