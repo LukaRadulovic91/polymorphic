@@ -1,0 +1,9 @@
+1.Dodavanje fajlova -> git add .
+2.Commitovanje promena -> git commit -m "ime poruke"
+3.Pushovanje promena -> git push origin ime_grane
+4.gledanje trenutne pozicije -> git status
+5.kreiranje nove grane -> git checkout -b ime_grane
+6.pullovanje promena sa postojece grane -> git pull origin ime_grane
+7.fetchovanje promena sa postojece grane -> git fetch origin ime_grane
+8.fetchovanje svih promena -> git fetch --all
+9.redirekcija na odredjeni commit -> git cherry-pick ime_hasha
