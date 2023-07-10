@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -22,5 +23,11 @@ class UserController extends Controller
         $user->save();
         return redirect("users/index")->with('message','user updated successfully');
     }
-
+    
+    public function delete($id){
+        DB::delete('delete 
+        from users
+        where id=?',[$id]);
+         return redirect("users/index")->with('success','user deleted successfully');
+    }
 }
