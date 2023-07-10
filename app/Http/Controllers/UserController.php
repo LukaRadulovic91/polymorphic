@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -25,6 +26,9 @@ class UserController extends Controller
     }
     
     public function delete($id){
+        if(Auth::user()->id==$id){
+            return redirect()->route("users.index")->with('error','you are not allowed to delete yourself');
+        }
         DB::delete('delete 
         from users
         where id=?',[$id]);
