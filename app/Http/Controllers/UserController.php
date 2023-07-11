@@ -35,4 +35,8 @@ class UserController extends Controller
          return redirect("users/index")->with('success','user deleted successfully');
     }
     
+    public function show($id){
+        $users=User::find($id);
+        return view('users.show',compact('users'));
+    }
 }
