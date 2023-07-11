@@ -34,4 +34,5 @@ class UserController extends Controller
         where id=?',[$id]);
          return redirect("users/index")->with('success','user deleted successfully');
     }
+    
 }
