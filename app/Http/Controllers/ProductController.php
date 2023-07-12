@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -36,5 +37,15 @@ class ProductController extends Controller
             $product->fill($data);
             $product->save();
             return redirect("products/index")->with('success','product updated successfully');
+        }
+        public function delete($id){
+            DB::delete('delete 
+            from products
+            where id=?',[$id]);
+             return redirect("products/index")->with('success','product deleted successfully');
+        }
+        public function show($id){
+            $products=Product::find($id);
+            return view('products.show',compact('products'));
         }
 }
