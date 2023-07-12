@@ -22,7 +22,7 @@ class UserController extends Controller
         $data=$request->only(['name','email']);
         $user->fill($data);
         $user->save();
-        return redirect("users/index")->with('message','user updated successfully');
+        return redirect("users/index")->with('success','user updated successfully');
     }
     
     public function delete($id){

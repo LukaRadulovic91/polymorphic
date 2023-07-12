@@ -41,5 +41,14 @@ class AuthManager extends Controller
         }
         return redirect(route('login'))->with("success","Registration successfull");
     }
-    
+    public function updateUser(Request $request,User $user){
+        $data=$request->validate([
+            'name'=>'required',
+            'email'=>'required|email'
+        ]);
+        $user->name=$request['name'];
+        $user->email=$request['email'];
+        $user->save();
+        return redirect('/users.index')->with('message','Student edited successfully');
+    }
 }
