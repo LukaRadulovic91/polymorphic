@@ -22,9 +22,19 @@ class ProductController extends Controller
             return redirect(route('products.index'))->with("error","registration failed");
         }
         return redirect(route('products.index'))->with("success","Registration successfull");
-}
-public function index(){
-    $products=Product::all();
-    return view('products.index',compact('products'));
-}
+    }
+        public function index(){
+            $products=Product::all();
+            return view('products.index',compact('products'));
+        }
+        public function edit(Product $product){
+        return view('products.edit', compact('product'));
+        }
+
+        public function update(Request $request,Product $product){
+            $data=$request->only(['product_name','price']);
+            $product->fill($data);
+            $product->save();
+            return redirect("products/index")->with('success','product updated successfully');
+        }
 }
