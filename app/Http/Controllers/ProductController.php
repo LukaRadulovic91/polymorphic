@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -31,6 +32,12 @@ class ProductController extends Controller
         public function edit(Product $product){
         return view('products.edit', compact('product'));
         }
+        function listProducts() {
+
+            $products = DB::table('products')->get();
+        
+            return view('products/index', ['products' => $products]);
+        }
 
         public function update(Request $request,Product $product){
             $data=$request->only(['product_name','price']);
@@ -47,5 +54,29 @@ class ProductController extends Controller
         public function show($id){
             $products=Product::find($id);
             return view('products.show',compact('products'));
+        }
+
+        public function store(Request $request){
+            $validator=Validator::make($request->all(),[
+                'name'=>'required',
+                'price'=>'required'
+            ]);
+            if($validator->fails()){
+                return response()->json([
+                    'status'=>400,
+                    'errors'=>$validator->messages()
+                ]);
+            }
+            else{
+                $product=new product;
+                $product->product_name=$request->input('name');
+                $product->price=$request->input('price');
+                $product->save();
+                return response()->json([
+                    'status'=>230,
+                    'message'=>'added successfully'
+                ]);
+            }
+            
         }
 }

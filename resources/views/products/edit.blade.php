@@ -1,8 +1,8 @@
 @extends('layout')
-@section('title','login')
+@section('title','edit')
 @section('content')
-  <div class='container'>
-  <div class="mt-5">
+<div class="container">
+<div class="mt-5">
       @if($errors->any())
         <div class="col-12">
           @foreach($errors->all() as $error)
@@ -17,17 +17,19 @@
         <div class="alert alert-success">{{session('success')}}</div>
         @endif
     </div>
-  <form action ="{{route('login.post')}}" method="post" class="ms-auto me-auto"style="width: 500px">
+    <h1>Edit product</h1>
+<form action="{{url('products/'.$product->id)}}" method="POST">
   @csrf
+  @method('PUT')
   <div class="mb-3">
-    <label class="form-label">Email address</label>
-    <input type="email" class="form-control" name="email">
+    <label>Product name</label>
+    <input type="text" name="product_name" value="{{$product->product_name}}" class="form-control">
   </div>
   <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" name="password">
+    <label>Price</label>
+    <input type="number" name="price" value="{{$product->price}}" class="form-control">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-success" type="submit">EDIT PRODUCT</button>
 </form>
-  </div>
+</div>
 @endsection

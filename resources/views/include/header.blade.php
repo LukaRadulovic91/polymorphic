@@ -7,15 +7,22 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="../users/index">User list</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="../products/index">Product list</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="../register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../productRegister">Register product</a>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
