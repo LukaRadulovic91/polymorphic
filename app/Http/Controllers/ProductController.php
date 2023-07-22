@@ -27,10 +27,9 @@ class ProductController extends Controller
     }
         public function index(){
             $products=Product::all();
-            return view('products.index',compact('products'));
-        }
-        public function edit(Product $product){
-        return view('products.edit', compact('product'));
+            return response()->json([
+                'products'=>$products
+            ]);
         }
         function listProducts() {
 
@@ -39,12 +38,7 @@ class ProductController extends Controller
             return view('products/index', ['products' => $products]);
         }
 
-        public function update(Request $request,Product $product){
-            $data=$request->only(['product_name','price']);
-            $product->fill($data);
-            $product->save();
-            return redirect("products/index")->with('success','product updated successfully');
-        }
+
         public function delete($id){
             DB::delete('delete 
             from products
@@ -76,7 +70,51 @@ class ProductController extends Controller
                     'status'=>230,
                     'message'=>'added successfully'
                 ]);
-            }
-            
+            }   
         }
-}
+
+        public function fetchProducts(){
+            $products=product::all();
+            return response()->json([
+                'products'=>$products,
+            ]);
+        }
+
+        public function edit($id){
+            $product=product::find($id);
+            if($product){
+                return response()->json([
+                    'status'=>200,
+                    'product'=>$product
+                ]);
+            }
+                else{
+                    return response()->json([
+                    'status'=>404,
+                    'message'=>'Student not found'
+                    ]);
+                }
+            }
+         public function update(Request $request,$id){
+            $validator=Validator::make($request->all(),[
+                'name'=>'required',
+                'price'=>'required'
+            ]);
+            if($validator->fails()){
+                return response()->json([
+                    'status'=>400,
+                    'errors'=>$validator->messages()
+                ]);
+            }
+            else{
+                $product=new product;
+                $product->product_name=$request->input('name');
+                $product->price=$request->input('price');
+                $product->save();
+                return response()->json([
+                    'status'=>230,
+                    'message'=>'added successfully'
+                ]);
+            }   
+         }   
+        }

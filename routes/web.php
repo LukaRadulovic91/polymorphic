@@ -45,6 +45,8 @@ Route::post('/products/index',[ProductController::class, 'store']);
 
 Route::get('/products/index',[ProductController::class,'index']);
 
+Route::get('fetch-products',[ProductController::class,'fetchProducts']);
+
 Route::resource('products',ProductController::class);
 
 Route::get('products/index',[ProductController::class,'listProducts']);
@@ -54,3 +56,7 @@ Route::resource('products',ProductController::class);
 Route::get('/delete/{id}',[ProductController::class,'delete']);
 
 Route::get('/show/{id}',[ProductController::class,'show']);
+
+Route::get('edit_product/{id}',[ProductController::class,'edit']);
+
+Route::put('update-student/{id}',[ProductController::class,'update']);
